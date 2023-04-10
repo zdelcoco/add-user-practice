@@ -2,7 +2,7 @@ import styles from './User.module.css';
 
 const User = props => {
   return (
-    <li>
+    <li className={styles.user}>
       {props.username} ({props.age} years old)
     </li>
   );

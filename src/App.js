@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import Card from './components/UI/Card';
 import Form from './components/Form/Form';
 import UserList from './components/Users/UserList';
+
+import styles from './components/Users/UserList.module.css';
 
 function App() {
   
@@ -19,10 +20,10 @@ function App() {
   };
 
   let userContent = (
-    <p>Add some users.</p>
+    <h2 className={styles.userlist__fallback}>Add some users.</h2>
   );
 
-  if (userList.length > 0) {
+  if (userSample.length > 0) {
     userContent = (
       <UserList users={userSample}/>
     );
@@ -30,7 +31,6 @@ function App() {
   
   return (
     <div>
-      <Card>hello</Card>
       <Form onSaveUserData={updateUserList}></Form>
       {userContent}
     </div>

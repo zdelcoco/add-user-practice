@@ -3,8 +3,9 @@
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
   background-color: rgb(244, 244, 244);
   text-align: left;
-  padding: 12px;
-  width: auto;
-  align-items: center;
-  justify-content: center;
+  padding: 1rem;
+  width: 50rem;
+  margin: 2rem auto;
+  /* display: inline-block; */
+  /* position: absolute; */
 }

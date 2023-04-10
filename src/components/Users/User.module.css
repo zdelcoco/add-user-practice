@@ -1,0 +1,11 @@
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  /* background-color: #4b4b4b; */
+  font-size: 1.5rem;
+  border-style: solid;
+  border-color: red;  
+}

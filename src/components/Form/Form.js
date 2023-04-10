@@ -29,16 +29,16 @@ const Form = props => {
   return (
     <Card>
       <form onSubmit={submitHandler}>  
-        <div>   
-          <label>Username</label>
+        <div className={styles.form__div}>   
+          <label>Username  </label>
           <input
             type='text' 
             value={enteredUsername}
             onChange={usernameChangeHandler}
           />
         </div> 
-        <div> 
-          <label>Age (Years)</label>         
+        <div className={styles.form__div}> 
+          <label>Age (Years)  </label>         
           <input 
             type='number'
             min='1'
