@@ -1,5 +1,7 @@
 .userlist {
-  border: 1px black;
+  font-size: 1.5rem;
+  list-style: none;
+  padding-left: 0;
 }
 
 .userlist__fallback {

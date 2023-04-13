@@ -6,26 +6,39 @@ import styles from './components/Users/UserList.module.css';
 
 function App() {
   
-  const [userList, setUserList] = useState('');
+  const [userList, setUserList] = useState([]);
   
-  const userSample = [
-    {username: "Zach", age: 31, id: 1},
-    {username: "Rachel", age: 32, id: 2}
-  ];
-  
-
   const updateUserList = (userObject) => {
-    const newKey = Math.max(...userSample.map(o => o.id)) + 1;
-    console.log(userObject.username + ' ' + newKey)
+    const newKey = () => {
+      if (userList.length > 0) {
+        return Math.max(...userList.map(user => user.id)) + 1;
+      }
+      return 1;
+    };
+
+    userObject.id = newKey();
+
+    setUserList(prevUserList => {
+      return [...prevUserList, userObject];
+    });
+  };
+
+  const deleteUserFromList = (userid) => {
+    setUserList((prevUserList) =>
+      prevUserList.filter((user) => user.id !== userid)
+    );
   };
 
   let userContent = (
     <h2 className={styles.userlist__fallback}>Add some users.</h2>
   );
 
-  if (userSample.length > 0) {
+  if (userList.length > 0) {
     userContent = (
-      <UserList users={userSample}/>
+      <UserList 
+        className={styles.userlist} 
+        users={userList} 
+        onClickUser={deleteUserFromList}/>
     );
   };
   

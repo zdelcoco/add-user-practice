@@ -4,16 +4,20 @@ import Card from '../UI/Card';
 
 const UserList = props => {
 
-  console.log(props.users[0].username);
+  const passUserToApp = (userid) => {
+    props.onClickUser(userid);
+  }
 
   return (
     <Card>
       <ul className={styles.userlist}>
         {props.users.map(user => (
           <User 
+            onUserClick={passUserToApp}
             key={user.id}
             username={user.username}
             age={user.age}
+            userKey={user.id}
           />          
         ))}
       </ul>  
