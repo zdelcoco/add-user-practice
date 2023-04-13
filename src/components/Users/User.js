@@ -8,7 +8,7 @@ const User = props => {
   
   return (
     <li className={styles.user} onClick={clickHandler}>
-      {props.username} ({props.age} years old) {props.userKey}
+      {props.username} ({props.age} years old)
     </li>
   );
 };
