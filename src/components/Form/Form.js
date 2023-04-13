@@ -30,16 +30,18 @@ const Form = props => {
     <Card>
       <form onSubmit={submitHandler}>  
         <div className={styles.form__div}>   
-          <label>Username  </label>
+          <label className={styles.form__label}>Username  </label>
           <input
+            className={styles.form__input}
             type='text' 
             value={enteredUsername}
             onChange={usernameChangeHandler}
           />
         </div> 
         <div className={styles.form__div}> 
-          <label>Age (Years)  </label>         
+          <label className={styles.form__label}>Age (Years)  </label>         
           <input 
+            className={styles.form__input}
             type='number'
             min='1'
             max='120'
@@ -48,7 +50,9 @@ const Form = props => {
             onChange={ageChangeHandler}    
           />
         </div> 
-        <Button>Add User</Button>
+        <div className={styles.button__div}>
+          <Button>Add User</Button>
+        </div>
       </form>
     </Card>
   );
